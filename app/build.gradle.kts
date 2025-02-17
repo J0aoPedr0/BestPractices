@@ -80,4 +80,12 @@ dependencies {
 
     //HILT_COMPILER
     kapt(libs.hilt.compiler)
+
+    //SPLASH_SCREEN
+    implementation(libs.splash.screen)
+
+    //COIL
+    implementation(libs.coil.compose)
+    //COIL-NETWORK-OKHTTP
+    implementation(libs.coil.network.okhttp)
 }

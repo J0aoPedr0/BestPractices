@@ -13,6 +13,8 @@ hiltVersion = "2.51.1"
 hiltNavigationCompose = "1.2.0"
 appcompat = "1.7.0"
 material = "1.12.0"
+splashScreenVersion = "1.0.0"
+coilVersion = "3.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -35,6 +37,9 @@ hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", v
 hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose"}
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+splash-screen = {group = "androidx.core",name = "core-splashscreen", version.ref = "splashScreenVersion"}
+coil-compose = {group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coilVersion"}
+coil-network-okhttp = {group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coilVersion"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
