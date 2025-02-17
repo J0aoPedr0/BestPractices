@@ -4,66 +4,88 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
+import com.example.bestpractices.R
 import com.example.bestpractices.presentation.theme.Black
-import com.example.bestpractices.presentation.theme.Purple40
+import com.example.bestpractices.presentation.theme.primaryColor
+
 
 @Composable
 fun BannerComponent(
     title: String? = null,
     description:String? = null,
-    imageUrl: String? = null
+    imageUrl: String? = null,
+    resourceValue: Int? = null,
 ) {
     Box(modifier = Modifier
         .fillMaxWidth()
-        .height(180.dp)
+        .wrapContentHeight()
         .padding(14.dp)
-        .clip(shape = RoundedCornerShape(16.dp)),
+        .clip(shape = RoundedCornerShape(16.dp))
+        .background(brush = Brush.horizontalGradient(
+            colors = listOf(
+                primaryColor,Black
+            )
+        ))
     ) {
 
+        imageUrl?.let {
         AsyncImage(
             modifier = Modifier.fillMaxSize(),
-            model =imageUrl,
+            model = imageUrl,
             contentDescription = "Image Banner",
-            contentScale = ContentScale.Crop)
-
+            contentScale = ContentScale.Crop
+        )
+        }
+        resourceValue?.let {
+            ImageComponent(
+                resourceValue = resourceValue,
+                modifier = Modifier
+                    .padding(18.dp)
+                    .align(Alignment.CenterEnd),
+                sizeImage = 80.dp
+            )
+        }
         Column(
             modifier = Modifier
-                .fillMaxSize()
-                .align(Alignment.TopCenter)
-                .clip(shape = RoundedCornerShape(16.dp)),
+                .fillMaxWidth()
+                .wrapContentHeight()
+                .padding(18.dp),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.Start,
         ) {
             title?.let {
                 TextComponent(
                     text = it,
-                    modifier = Modifier
-                        .padding(8.dp),
+                    modifier = Modifier.wrapContentSize(),
                     fontSize = 26.sp
                 )
             }
-
+            Spacer(modifier = Modifier.height(8.dp))
             description?.let {
                 TextComponent(
                     text = it,
-                    modifier = Modifier
-                        .padding(8.dp)
-                )
+                    modifier = Modifier.wrapContentSize()
+                    )
             }
 
         }
@@ -74,6 +96,9 @@ fun BannerComponent(
 @Composable
 private fun BannerComponentPreview() {
     BannerComponent(
-        title = "Olá",
-        description = "Olá")
+        title = stringResource(R.string.wealth),
+        description = "Your investments",
+        imageUrl = null,
+        resourceValue = R.drawable.wealth_icon
+    )
 }

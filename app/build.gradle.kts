@@ -88,4 +88,7 @@ dependencies {
     implementation(libs.coil.compose)
     //COIL-NETWORK-OKHTTP
     implementation(libs.coil.network.okhttp)
+
+    //LOTTIE
+    implementation(libs.lottie)
 }

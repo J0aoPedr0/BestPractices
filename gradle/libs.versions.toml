@@ -15,6 +15,7 @@ appcompat = "1.7.0"
 material = "1.12.0"
 splashScreenVersion = "1.0.0"
 coilVersion = "3.1.0"
+lottieVersion = "6.6.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -40,6 +41,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 splash-screen = {group = "androidx.core",name = "core-splashscreen", version.ref = "splashScreenVersion"}
 coil-compose = {group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coilVersion"}
 coil-network-okhttp = {group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coilVersion"}
+lottie = {group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottieVersion"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

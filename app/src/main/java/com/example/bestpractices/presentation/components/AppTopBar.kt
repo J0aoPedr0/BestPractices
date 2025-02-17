@@ -13,22 +13,16 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.Icons.Filled
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.bestpractices.presentation.theme.Black
 import com.example.bestpractices.presentation.theme.White
 import com.example.bestpractices.presentation.theme.primaryColor
-import com.example.bestpractices.presentation.theme.secondaryColor
 
 
 @Composable
@@ -36,13 +30,16 @@ fun AppTopBar() {
     Row(
         Modifier
             .fillMaxWidth()
+            .systemBarsPadding()
             .height(70.dp)
             .background(primaryColor)
-            .padding(start = 18.dp,end = 18.dp, top = 20.dp, bottom = 14.dp),
-        verticalAlignment = Alignment.CenterVertically)
+            .padding(start = 18.dp,end = 18.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center  )
     {
         Icon(
-            modifier = Modifier.size(28.dp),
+            modifier = Modifier
+                .size(28.dp),
             imageVector = Icons.Filled.Person,
             contentDescription = "Person Icon",
             tint = White)
@@ -50,9 +47,10 @@ fun AppTopBar() {
         Spacer(modifier = Modifier.width(18.dp))
 
         TextComponent(
+            text = "Add adress",
             modifier = Modifier.wrapContentSize(),
-            text = "+ Adress",
-            fontSize = 20.sp)
+            fontSize = 22.sp,
+        )
         Spacer(modifier = Modifier.weight(1f))
         Icon(
             modifier = Modifier.size(28.dp),

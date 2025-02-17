@@ -12,7 +12,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.bestpractices.R
 import com.example.bestpractices.presentation.components.AppTopBar
 import com.example.bestpractices.presentation.components.BannerComponent
 import com.example.bestpractices.presentation.theme.Purple80
@@ -20,27 +22,25 @@ import com.example.bestpractices.presentation.theme.White
 
 @Composable
 fun HomeScreen() {
-
     Scaffold(topBar = { AppTopBar() })
-    {
-        innerPadding ->
-        Column(modifier = Modifier
-            .fillMaxSize()
-            .wrapContentSize(Alignment.TopStart)
-            .background(White)
-            .padding(innerPadding))
+    { innerPadding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .wrapContentSize(Alignment.TopStart)
+                .background(White)
+                .padding(innerPadding)
+        )
         {
-            BannerComponent(title = "Olá mundo",
-                description = "Descrição do Banner",
-                imageUrl = "https://i.ibb.co/1Y5TvH2Z/image-Background.webp")
+            BannerComponent(
+                title = stringResource(R.string.wealth),
+                description = "Your investments",
+                imageUrl = null,
+                resourceValue = R.drawable.wealth_icon
+            )
         }
     }
-
-
 }
-
-
-
 @Preview(showBackground = true)
 @Composable
 private fun HomeScreenPreview() {
