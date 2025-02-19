@@ -22,3 +22,5 @@ dependencyResolutionManagement {
 rootProject.name = "BestPractices"
 include(":app")
 include(":utilities")
+include(":design")
+include(":wealth")

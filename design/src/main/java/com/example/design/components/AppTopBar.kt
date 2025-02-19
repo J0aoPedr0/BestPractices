@@ -1,4 +1,4 @@
-package com.example.bestpractices.presentation.components
+package com.example.design.components
 
 
 import androidx.compose.foundation.background
@@ -18,45 +18,59 @@ import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.bestpractices.presentation.theme.White
-import com.example.bestpractices.presentation.theme.primaryColor
+import com.example.design.R
+import com.example.design.themes.White
+import com.example.design.themes.primaryColor
 
 
 @Composable
-fun AppTopBar() {
+fun AppTopBar(
+    title: String? = null,
+    firstImageVector: ImageVector? = null,
+    secondImageVector: ImageVector? = null,
+) {
     Row(
         Modifier
             .fillMaxWidth()
             .systemBarsPadding()
             .height(70.dp)
             .background(primaryColor)
-            .padding(start = 18.dp,end = 18.dp),
+            .padding(start = 18.dp, end = 18.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center  )
     {
-        Icon(
-            modifier = Modifier
-                .size(28.dp),
-            imageVector = Icons.Filled.Person,
-            contentDescription = "Person Icon",
-            tint = White)
+        firstImageVector?.let {
+            Icon(
+                modifier = Modifier
+                    .size(28.dp),
+                imageVector = firstImageVector,
+                contentDescription = stringResource(R.string.left_icon_top_bar),
+                tint = White
+            )
+        }
 
         Spacer(modifier = Modifier.width(18.dp))
 
         TextComponent(
-            text = "Add adress",
+            text = title,
             modifier = Modifier.wrapContentSize(),
             fontSize = 22.sp,
         )
         Spacer(modifier = Modifier.weight(1f))
-        Icon(
-            modifier = Modifier.size(28.dp),
-            imageVector = Icons.Filled.Notifications,
-            contentDescription = "Person Icon",
-            tint = White)
+
+        secondImageVector?.let {
+            Icon(
+                modifier = Modifier.size(28.dp),
+                imageVector = secondImageVector,
+                contentDescription = stringResource(R.string.right_icon_top_bar),
+                tint = White
+            )
+        }
     }
 }
 

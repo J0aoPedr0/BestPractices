@@ -1,4 +1,4 @@
-package com.example.bestpractices.presentation.theme
+package com.example.design.themes
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.colorspace.WhitePoint

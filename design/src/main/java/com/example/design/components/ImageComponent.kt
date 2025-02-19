@@ -1,4 +1,4 @@
-package com.example.bestpractices.presentation.components
+package com.example.design.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size
@@ -8,7 +8,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.example.bestpractices.R
+import com.example.design.R
 
 @Composable
 fun ImageComponent(

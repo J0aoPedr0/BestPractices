@@ -1,4 +1,4 @@
-package com.example.bestpractices.presentation.theme
+package com.example.design.themes
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -9,10 +9,6 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import com.example.design.themes.Pink40
-import com.example.design.themes.Pink80
-import com.example.design.themes.primaryColor
-import com.example.design.themes.secondaryColor
 
 private val DarkColorScheme = darkColorScheme(
     primary = primaryColor,

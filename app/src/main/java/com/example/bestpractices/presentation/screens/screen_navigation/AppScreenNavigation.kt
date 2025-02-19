@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.bestpractices.presentation.screens.home.HomeScreen
+import com.example.wealth.presentation.screens.WealthHomeScreen
 
 @Composable
 fun AppScreenNavigation() {
@@ -18,10 +19,13 @@ fun AppScreenNavigation() {
     Surface (Modifier.fillMaxSize()){
         NavHost(
             navController = navController,
-            startDestination = Routes.HomeScreen.route
+            startDestination = Routes.WealthHomeScreen.route
         ) {
             composable(route = Routes.HomeScreen.route){
                 HomeScreen()
+            }
+            composable(route = Routes.WealthHomeScreen.route){
+                WealthHomeScreen()
             }
         }
     }

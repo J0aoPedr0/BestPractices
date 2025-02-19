@@ -1,4 +1,4 @@
-package com.example.bestpractices.presentation.components
+package com.example.design.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,9 +23,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
-import com.example.bestpractices.R
-import com.example.bestpractices.presentation.theme.Black
-import com.example.bestpractices.presentation.theme.primaryColor
+import com.example.design.R
+import com.example.design.themes.Black
+import com.example.design.themes.primaryColor
 
 
 @Composable
@@ -41,11 +40,13 @@ fun BannerComponent(
         .wrapContentHeight()
         .padding(14.dp)
         .clip(shape = RoundedCornerShape(16.dp))
-        .background(brush = Brush.horizontalGradient(
-            colors = listOf(
-                primaryColor,Black
+        .background(
+            brush = Brush.horizontalGradient(
+                colors = listOf(
+                    primaryColor, Black
+                )
             )
-        ))
+        )
     ) {
 
         imageUrl?.let {
@@ -97,7 +98,7 @@ fun BannerComponent(
 private fun BannerComponentPreview() {
     BannerComponent(
         title = stringResource(R.string.wealth),
-        description = "Your investments",
+        description = stringResource(R.string.your_investments),
         imageUrl = null,
         resourceValue = R.drawable.wealth_icon
     )

@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt.android)
@@ -7,20 +7,14 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bestpractices"
+    namespace = "com.example.wealth"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.bestpractices"
         minSdk = 24
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables{
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -56,9 +50,9 @@ android {
 }
 
 dependencies {
+
     implementation(project(":utilities"))
     implementation(project(":design"))
-    implementation(project(":wealth"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -87,9 +81,6 @@ dependencies {
 
     //HILT_COMPILER
     kapt(libs.hilt.compiler)
-
-    //SPLASH_SCREEN
-    implementation(libs.splash.screen)
 
     //COIL
     implementation(libs.coil.compose)

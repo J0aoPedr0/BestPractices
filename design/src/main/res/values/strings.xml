@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BestPractices</string>
+
+    //Home Screen
+    <string name="add_address">Add address</string>
+    <string name="left_icon_top_bar">Left icon top bar</string>
+    <string name="right_icon_top_bar">Left icon top bar</string>
+    <string name="wealth">Wealth</string>
+    <string name="your_investments">Your investments</string>
+    <string name="title_wealth">wealth Module</string>
+</resources>
